@@ -147,7 +147,7 @@ import {
   
           <FormControl id="budget" isRequired>
             <FormLabel>Budget Per Person</FormLabel>
-            <Text fontSize='2xl'>{budgetPerPerson}</Text>
+            {/* <Text fontSize='2xl'>{budgetPerPerson}</Text> */}
             <InputGroup>
               <InputLeftElement
                 pointerEvents="none"

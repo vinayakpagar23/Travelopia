@@ -5,7 +5,6 @@ import {
   Avatar,
   HStack,
   Image,
-  Link,
   IconButton,
   Button,
   Menu,
@@ -17,6 +16,7 @@ import {
   useColorModeValue,
   Stack,
 } from '@chakra-ui/react';
+import {Link} from "react-router-dom"
 import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
 
 const Links = ['Plan Your Trip','Dashboard'];
@@ -40,7 +40,7 @@ export default function NavBar() {
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box bg={"#3ad6b4"} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -60,18 +60,19 @@ export default function NavBar() {
                 </Box>
             <HStack
               as={'nav'}
-              spacing={4}
-              display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
-                <NavLink  key={link}>{link}</NavLink>
-              ))}
+              spacing={8}
+              display={{ base: 'none', md: 'flex' }}
+              fontSize={30}
+              fontWeight={"bold"}>
+              <Link to="/" style={{padding:"20px"}}>Plan Your Trip !</Link>
+              <Link to="/details" style={{padding:"20px"}}>Dashboard</Link>
             </HStack>
           </HStack>
           
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }} bg={"red"}>
+          <Box pb={4} display={{ md: 'none' }} >
             <Stack as={'nav'} spacing={4}>
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
