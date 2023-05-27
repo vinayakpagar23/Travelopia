@@ -7,7 +7,7 @@ import TableFormat from './TableFormat';
 import GridFormat from './GridFormat';
 const AllData = () => {
     const[data1,setData] = useState([]);
-    const [flag,setFlag] = useState(true);
+    const [grid,setGrid] = useState("grid");
     const fetchData =async()=>{
         const {data} = await axios.get("https://plain-bull-underclothes.cyclic.app/api/details");
         console.log(data);
@@ -20,15 +20,15 @@ const AllData = () => {
     <>
     <Stack spacing={4} direction='row' align='center' margin={15}>
 
-  <Button colorScheme='teal' size='lg' onClick={()=>setFlag(!flag)}>
+  <Button colorScheme='teal' size='lg' onClick={()=>setGrid("grid")}>
     Grid Format
   </Button>
-  <Button colorScheme='teal' size='lg' onClick={()=>setFlag(!flag)}>
+  <Button colorScheme='teal' size='lg' onClick={()=>setGrid("table")}>
     Table Format
   </Button>
 </Stack>
     {
-        data1.length >0?(flag?<GridFormat data={data1}/>: <TableFormat data={data1}/>):<Loading/>
+        data1.length >0?(grid=="grid"?<GridFormat data={data1}/>: <TableFormat data={data1}/>):<Loading/>
     }
     
    
