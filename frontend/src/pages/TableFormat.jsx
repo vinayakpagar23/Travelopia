@@ -25,8 +25,6 @@ const TableFormat = ({data}) => {
                 <Td>{ele.name}</Td>
                 <Td>{ele.email}</Td>
                 <Td isNumeric>{ele.destination}</Td>
-                <Td isNumeric>{ele.no_of_trave}</Td>
-                <Td isNumeric>{ele.destination}</Td>
                 <Td isNumeric>{ele.no_of_travellers}</Td>
                 <Td isNumeric>{ele.budgetPerPerson}</Td>
                 <Td isNumeric>{ele.totalBudget}</Td>

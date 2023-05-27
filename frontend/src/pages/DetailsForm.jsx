@@ -16,7 +16,7 @@ import {
     Image
   } from "@chakra-ui/react";
   import React, { useEffect, useState } from "react";
-  
+  import { useNavigate } from "react-router-dom";
   import axios from "axios";
   import AllData from "./AllData";
   const DetailsForm = () => {
@@ -28,7 +28,7 @@ import {
     const [totalBudget,setTotalBudget] = useState(0);
     const [picLoading, setPicLoading] = useState(false);
     const toast = useToast();
-  
+    const navigate = useNavigate();
     const submitHandler = async () => {
       setPicLoading(true);
       if (!name || !email || !destination || !no_of_travellers) {
@@ -68,6 +68,7 @@ import {
           isClosable: true,
           position: "bottom",
         });
+        navigate("/details");
         localStorage.setItem("details", JSON.stringify(data));
         setPicLoading(false);
       } catch (error) {
@@ -104,7 +105,7 @@ import {
   
   useEffect(()=>{
      setTotalBudget(budgetPerPerson*no_of_travellers)
-  },[no_of_travellers])
+  },[no_of_travellers,budgetPerPerson])
     return (
         <Box display={"flex"} flexWrap={"wrap"}>
             
