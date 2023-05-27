@@ -12,7 +12,8 @@ import {
     CheckIcon,
     useToast,
     Text,
-    Heading
+    Heading,
+    Image
   } from "@chakra-ui/react";
   import React, { useEffect, useState } from "react";
   
@@ -105,8 +106,10 @@ import {
      setTotalBudget(budgetPerPerson*no_of_travellers)
   },[no_of_travellers])
     return (
-      <Box width={"50%"} margin={"auto"} marginTop={"60px"}>
-        <Heading>Fill Your Data</Heading>
+        <Box display={"flex"} flexWrap={"wrap"}>
+            
+      <Box width={"40%"} margin={"auto"} marginTop={"60px"}>
+        <Heading>plan Your Trip !</Heading>
         <VStack spacing={"5px"} color="black">
           <FormControl id="name" isRequired>
             <FormLabel>Name</FormLabel>
@@ -175,7 +178,11 @@ import {
           </Button>
         </VStack>
       </Box>
-     
+      <Box marginTop={59} paddingTop={30}>
+
+                <Image borderRadius={30} marginRight={10} src ="https://assets.traveltriangle.com/blog/wp-content/uploads/2017/12/Planning-The-Itinerary.jpg"></Image>
+            </Box>
+      </Box>
     );
   };
   
