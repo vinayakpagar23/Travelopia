@@ -1,0 +1,32 @@
+
+.OuterBox{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    width: 80%;
+    margin: auto;
+    margin-top: 70px;
+}
+
+.box{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    padding: 30px;
+    
+}
+
+
+/* Mobile media query */
+@media (max-width :768px){
+    .OuterBox{
+        grid-template-columns: repeat(1,1fr);
+    }
+   
+}
+
+/* tablet */
+
+@media (min-width: 768px ) and (max-width:1023px){
+    .OuterBox{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
