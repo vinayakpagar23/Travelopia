@@ -111,12 +111,13 @@ const DetailsForm = () => {
   return (
     <Box display={"flex"} flexWrap={"wrap"} zIndex={10000} className="form">
       <Box
-        width={"40%"}
+        // width={"40%"}
         margin={"auto"}
         marginTop={"60px"}
         padding={10}
         backgroundColor={"white"}
         boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px;"}
+        className="details"
       >
         <Heading margin={2}>plan Your Trip !</Heading>
         <VStack spacing={"5px"} color="black">
